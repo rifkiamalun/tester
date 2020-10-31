@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.querySelector('.share-btn').addEvenetListener('click',function(){
+            console.log('clicked');
+            if (navigator.share){
+                navigator.share({
+                    title: "Ratib Hada Al Hikmah",
+                    text : "Install Aplikasinya di Hp Mu",
+                    url  : "https://ratibhadad-alhikmah.my.id/"
+
+                })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing', error));
+            }
+        });
+    </script>
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <button id='share-btn'>Share!</button>
+</body>
+</html>
